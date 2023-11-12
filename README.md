@@ -2,12 +2,10 @@
 
 RabbitMQ Streams Node.js client
 
----
-
 ## Install
 
 ```bash
-yarn add -D @artie-owlet/rabbitmq-stream
+yarn add @artie-owlet/rabbitmq-stream
 ```
 
 ## Usage
