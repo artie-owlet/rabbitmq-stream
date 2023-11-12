@@ -1,0 +1,26 @@
+{
+  "src": [
+    "src/"
+  ],
+  "all": true,
+  "include": [
+    "src/"
+  ],
+  "extension": [
+    ".ts"
+  ],
+  "exclude": [
+    "src/index.ts",
+    "src/messages/close.ts"
+  ],
+  "check-coverage": true,
+  "per-file": true,
+  "statements": 100,
+  "branches": 100,
+  "functions": 100,
+  "lines": 100,
+  "reporter": [
+    "text",
+    "html"
+  ]
+}

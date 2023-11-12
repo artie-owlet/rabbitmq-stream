@@ -1,0 +1,54 @@
+{
+  "name": "@artie-owlet/rabbitmq-stream",
+  "version": "0.0.1-dev.0",
+  "description": "RabbitMQ Streams Node.js client",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "build-release": "tsc -p tsconfig-release.json",
+    "clean": "rm -rf build/ dist/",
+    "coverage": "c8 yarn test",
+    "doc": "typedoc",
+    "lint": "eslint --cache --ext .ts src/ test/",
+    "test": "mocha test/",
+    "test-build": "yarn tsc -p test/tsconfig.json --noEmit",
+    "test-release": "yarn test-build && c8 mocha --config .mocharc-release.yml test/"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/artie-owlet/rabbitmq-stream.git"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
+  "keywords": [
+    "RabbitMQ",
+    "RabbitMQ Streams"
+  ],
+  "packageManager": "yarn@4.0.1",
+  "devDependencies": {
+    "@artie-owlet/chifir": "^2.0.0",
+    "@commitlint/cli": "^18.4.1",
+    "@commitlint/config-conventional": "^18.4.0",
+    "@types/dockerode": "^3.3.23",
+    "@types/mocha": "^10.0.4",
+    "@types/node": "^20.9.0",
+    "@typescript-eslint/eslint-plugin": "^6.10.0",
+    "@typescript-eslint/parser": "^6.10.0",
+    "axios": "^1.6.1",
+    "c8": "^8.0.1",
+    "dockerode": "^4.0.0",
+    "eslint": "^8.53.0",
+    "husky": "^8.0.3",
+    "mocha": "^10.2.0",
+    "ts-node": "^10.9.1",
+    "typedoc": "^0.25.3",
+    "typescript": "^5.2.2"
+  }
+}

@@ -1,0 +1,17 @@
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+build/
+dist/
+.eslintcache
+coverage/
+public/
+*.crt
+*.key
+*.pfx
+.ci/rabbitmq-ssl
+.erlang.cookie

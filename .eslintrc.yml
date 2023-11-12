@@ -1,0 +1,84 @@
+root: true
+env:
+  es2022: true
+  node: true
+plugins:
+- "@typescript-eslint"
+parser: "@typescript-eslint/parser"
+parserOptions:
+  project:
+  - "./tsconfig.json"
+  - "./tsconfig-doc.json"
+  - "./test/tsconfig.json"
+extends:
+- eslint:recommended
+- plugin:@typescript-eslint/recommended
+- plugin:@typescript-eslint/recommended-requiring-type-checking
+
+rules:
+
+  max-len:
+  - warn
+  - code: 120
+    ignoreUrls: true
+
+  no-console:
+  - error
+
+  no-trailing-spaces:
+  - error
+  - ignoreComments: true
+
+  comma-dangle: off
+  "@typescript-eslint/comma-dangle":
+  - error
+  - always-multiline
+
+  "@typescript-eslint/explicit-module-boundary-types":
+  - error
+
+  indent: off
+  "@typescript-eslint/indent":
+  - error
+  - 4
+  - ignoreComments: true
+    FunctionDeclaration:
+      parameters: 1
+    FunctionExpression:
+      parameters: 1
+    SwitchCase: 1
+
+  "@typescript-eslint/naming-convention":
+  - error
+  - selector: interface
+    format:
+    - PascalCase
+    custom:
+      regex: "^I[A-Z]"
+      match: true
+
+  "@typescript-eslint/no-explicit-any":
+  - error
+
+  "@typescript-eslint/no-misused-promises":
+  - error
+  - checksVoidReturn:
+      arguments: false
+
+  "@typescript-eslint/no-unused-vars":
+  - error
+  - argsIgnorePattern: "^_[0-9A-Za-z]*$"
+
+  object-curly-spacing: off
+  "@typescript-eslint/object-curly-spacing":
+  - error
+  - always
+
+  "@typescript-eslint/restrict-template-expressions":
+  - error
+  - allowBoolean: true
+    allowRegExp: true
+
+  semi: off
+  "@typescript-eslint/semi":
+  - error

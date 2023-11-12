@@ -1,0 +1,8 @@
+exit: true
+extension: ['ts']
+recursive: true
+reporter: dot
+require:
+- ts-node/register/transpile-only
+slow: 10000
+timeout: 10000
