@@ -1,0 +1,38 @@
+x-common-volumes: &common_volumes
+  - ./rabbitmq-conf:/etc/rabbitmq
+  - ./.erlang.cookie:/var/lib/rabbitmq/.erlang.cookie
+  - ./rabbitmq-ssl:/var/lib/rabbitmq/ssl
+
+version: '3'
+services:
+  rabbitmq1:
+    container_name: rabbitmq-stream-client-ci-1
+    image: rabbitmq:3.11-alpine
+    hostname: host1
+    ports:
+      - 4001:5552
+      - 4011:5551
+      - 15672:15672
+    volumes: *common_volumes
+
+  rabbitmq2:
+    container_name: rabbitmq-stream-client-ci-2
+    image: rabbitmq:3.11-alpine
+    hostname: host2
+    ports:
+      - 4002:5552
+      - 4012:5551
+    volumes: *common_volumes
+
+  rabbitmq3:
+    container_name: rabbitmq-stream-client-ci-3
+    image: rabbitmq:3.11-alpine
+    hostname: host3
+    ports:
+      - 4003:5552
+      - 4013:5551
+    volumes: *common_volumes
+
+networks:
+  default:
+    name: 'rabbitmq-stream-client-ci'

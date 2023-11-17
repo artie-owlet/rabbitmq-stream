@@ -8,7 +8,6 @@ parser: "@typescript-eslint/parser"
 parserOptions:
   project:
   - "./tsconfig.json"
-  - "./tsconfig-doc.json"
   - "./test/tsconfig.json"
 extends:
 - eslint:recommended
@@ -68,6 +67,12 @@ rules:
   "@typescript-eslint/no-unused-vars":
   - error
   - argsIgnorePattern: "^_[0-9A-Za-z]*$"
+
+  "@typescript-eslint/no-unsafe-declaration-merging":
+  - off
+
+  "@typescript-eslint/no-unsafe-enum-comparison":
+  - off
 
   object-curly-spacing: off
   "@typescript-eslint/object-curly-spacing":
